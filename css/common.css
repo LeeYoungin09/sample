@@ -730,7 +730,7 @@ Q. 상단에 얇은 선이 안보이게 하려면? */
     /* 클릭 부분을 만들어줘야함, ul에 가려져있었음 */
     cursor: pointer;
     padding: 0 0.5rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   .hd ul,
