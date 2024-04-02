@@ -1,0 +1,835 @@
+@charset 'utf-8';
+/* https://fonts.google.com/specimen/Montserrat */
+/* https://www.figma.com/file/ldoL98MjPHURuWKMGn0B8S/Website-Design-(Community)?type=design&node-id=2003-123&mode=design&t=5h1S9UiBrrRIMtrh-0 */
+
+/* git remote add origin https://github.com/LeeYoungin09/supreme-pancake.git */
+/* git remote add origin https://github.com/LeeYoungin09/practice1.git */
+/* https://leeyoungin09.github.io/supreme-pancake/# */
+/* https://leeyoungin09.github.io/practice1/ */
+
+:root {
+  --gap1: 16px;
+  --point-c1: #000000;
+  --point-c2: #14213d;
+  --point-c3: #fca311;
+  --point-c4: #e5e5e5;
+  --point-c5: #ffffff;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.wrap {
+  overflow: hidden;
+  min-width: 400px;
+}
+/* 스크롤 생성방지 */
+
+/* vl {
+  display: block;
+  width: 10px;
+  background-color: #000;
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  left: 150px;
+} */
+
+.hd {
+  /* border: 1px solid red; */
+  background-color: var(--point-c4);
+  /* height: 100px; h1높이로 감싸줌 ★★★래핑됨(hd높이=h1값) */
+  /* margin: 0;
+Q. 상단에 얇은 선이 안보이게 하려면? */
+  position: relative;
+}
+
+/* main영역 */
+
+.main {
+  /* border: 1px solid olivedrab; */
+  background-color: var(--point-c4);
+  position: relative;
+}
+
+.main .bg {
+  /* border: 1px solid greenyellow; */
+  max-width: calc(100% - 6rem);
+  margin: auto;
+  display: flex;
+  height: 60vh;
+  min-height: 320px;
+  justify-content: space-between;
+  /* 양쪽정렬 */
+}
+
+.bg div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* 방향바뀌었기 때문에 수평->수직정렬 */
+}
+
+.bg div > * {
+  margin-top: 35px;
+  /* main 글자 간격처리 */
+}
+
+.bg h1 {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.bg p,
+.bg span {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.bg p {
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.bg span {
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: var(--point-c3);
+  border: none;
+  height: 30px;
+  width: 300px;
+  color: var(--point-c5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main2영역 */
+
+.main2 h3 {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+.main2 span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--point-c3);
+  padding: 1rem;
+}
+
+.main2 p {
+  padding: 1rem;
+  font-size: smaller;
+}
+
+.main2 a {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  align-content: center;
+  bottom: 10px;
+  margin-left: 1rem;
+}
+
+.main2 a::after {
+  content: '';
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: var(--point-c4);
+  position: absolute;
+  animation: FigEffect 3s infinite;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@keyframes FigEffect {
+  0% {
+    bottom: -30px;
+    right: -100px;
+    z-index: 10;
+    opacity: 0.5;
+  }
+  50% {
+    bottom: -40px;
+    right: -110px;
+    z-index: 10;
+    opacity: 0.3;
+  }
+  100% {
+    bottom: -30px;
+    right: -100px;
+    z-index: 10;
+    opacity: 0.4;
+  }
+}
+
+.main2 a:hover {
+  font-weight: bold;
+}
+
+/* Q. 그리드 안 각요소들을 붙여서 세로 중앙정렬 어떻게? */
+
+.main2 {
+  /* border: 1px solid olivedrab; */
+  background-color: var(--point-c5);
+  position: relative;
+  /* 컨텐츠가 그리드 넘어가지 않도록 하려면 */
+}
+
+.main2 div {
+  /* border: 1px solid greenyellow; */
+  max-width: calc(100% - 6rem);
+  margin: auto;
+  height: 450px;
+  min-width: 600px;
+  align-content: center;
+  /* 수직 가운데 배치 */
+}
+
+.main2 .container {
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 두 개의 열 */
+  grid-template-rows: auto auto auto;
+  /* 세 개의 행 */
+  gap: 10px;
+}
+
+/* process영역 */
+/* process영역  -반응형 추가 */
+.process {
+  display: flex;
+  text-align: center;
+  /* 가운데정렬 */
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  margin: auto;
+}
+
+.process > h3 {
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.process > h3 > span {
+  color: var(--point-c3);
+}
+
+.process p {
+  font-size: smaller;
+  padding: 1rem;
+}
+
+.pop {
+  /* border: 1px solid red; */
+  width: 80%;
+  margin: auto;
+  /* 그리드 가운데정렬 */
+
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 두 개의 열 */
+  grid-template-rows: auto auto;
+  /* 세 개의 행 */
+  gap: 20px;
+}
+
+.pop > li {
+  padding-top: 20px;
+  background-color: var(--point-c4);
+  width: 200px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.pop > li > a > span {
+  font-size: small;
+}
+
+.pop > li > a > img {
+  width: 20%;
+  padding-bottom: 20px;
+}
+.btn2:hover {
+  font-weight: bold;
+}
+
+.process strong {
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
+  display: inline-block;
+  background-color: var(--point-c3);
+  color: var(--point-c5);
+  border-radius: 5px;
+  line-height: 2;
+}
+
+/* intro영역 */
+
+.intro {
+  /* border: 1px solid olivedrab; */
+  position: relative;
+  overflow: hidden;
+}
+
+.intro .fra {
+  /* border: 1px solid greenyellow; */
+  max-width: calc(100% - 6rem);
+  margin: auto;
+  display: flex;
+  height: 80vh;
+  justify-content: space-between;
+  /* 양쪽정렬 */
+  align-items: center;
+}
+
+.fra > div > h3 {
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.3rem;
+  margin: 5px;
+}
+
+.fra > div > img {
+  margin: auto;
+  width: 350px;
+}
+
+.fra > div > a {
+  margin-left: 20px;
+  background-color: var(--point-c5);
+  border: 1px solid var(--point-c3);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px var(--point-c4);
+  padding: 10px;
+  font-size: 0.8rem;
+  color: var(--point-c3);
+  font-weight: bold;
+}
+
+/* down영역 */
+.down {
+  background-color: var(--point-c4);
+  /* border: 1px solid olivedrab; */
+  position: relative;
+  overflow: hidden;
+}
+
+.down .downD {
+  /* border: 1px solid greenyellow; */
+  max-width: calc(100% - 6rem);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.downD > div {
+  /* border: 1px solid red; */
+  margin: 1px;
+}
+
+.downD > div > h3 {
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.downD > div > h4 {
+  color: var(--point-c3);
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.downD > div > p {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.downD div > a {
+  display: inline-block;
+  /* 너비, 높이 지정 */
+  margin: 1rem;
+  padding-top: 6px;
+  border-radius: 5px;
+  background-color: var(--point-c3);
+  border: none;
+  height: 30px;
+  width: 250px;
+  color: var(--point-c5);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.downD div > a:hover {
+  font-weight: bold;
+}
+
+.downD > div > ul {
+  display: flex;
+  justify-content: left;
+}
+
+.downD > div > ul > li {
+  border: 2px solid var(--point-c5);
+  margin-left: 15px;
+  padding: 10px;
+  width: 145px;
+  text-align: center;
+}
+
+.down > div > img {
+  width: 40%;
+  object-fit: contain;
+}
+
+.ft {
+  /* border: 1px solid olivedrab; */
+  overflow: hidden;
+}
+
+.ft .foo {
+  /* border: 1px solid greenyellow; */
+  max-width: calc(100% - 6rem);
+  margin: auto;
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* .footNav.on {
+  display: flex;
+} */
+
+.footNav {
+  padding-top: 2.5rem;
+  display: flex;
+}
+
+.footNav > li {
+  padding-top: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+  position: relative;
+}
+
+.footNav > li > a {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.footNav ul {
+  /* visibility: hidden; */
+  padding: 5px 30px 20px 0;
+  transition: opacity 0.5s ease;
+  animation: menuEffect 2s forwards;
+}
+
+@keyframes menuEffect {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .footNav > li:hover ul {
+  visibility: visible;
+} */
+
+.footNav ul > li {
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* border: 1px solid var(--point-c4); */
+  padding-top: 15px;
+}
+
+.footNav > li > ul > li:hover {
+  color: var(--point-c3);
+  text-decoration: underline;
+}
+
+.info div {
+  font-size: 10px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.info > div > img {
+  margin-top: 10px;
+  display: inline-block;
+  width: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.ft .right {
+  height: 40px;
+  background-color: var(--point-c2);
+  margin-bottom: 0;
+  color: var(--point-c5);
+  font-weight: 200;
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ham {
+  display: none;
+}
+
+/* 화면 더 줄어들면 -> 모바일버전으로 */
+@media (min-width: 671px) {
+  .hd > nav {
+    /* border: 1px solid yellow; */
+    display: flex;
+    /* 한줄*/
+
+    max-width: calc(100% - 6rem);
+    margin: auto;
+    /* root는 브라우저이나 활용을 위해 각 섹션에 width줌
+  hd에 주려고 하였으나, 배경때문에 nav에 줌 */
+    text-align: center;
+    /* 이미지 수평 가운데정렬, li 수평 가운데정렬 */
+    align-items: center;
+    /* 요소들 수직 가운데정렬 */
+  }
+
+  .hd h1 {
+    background-color: white;
+    border-radius: 0 0 10px 10px / 0 0 10px 10px;
+    min-width: 450px;
+    height: 65px;
+    /* margin: 0 0 0 50px; 줄 필요없이 nav에 max-width 적용*/
+  }
+  .hd img {
+    margin-top: 5px;
+    width: 150px;
+    min-width: 300px;
+    height: 2.5rem;
+    /* img크기주기 */
+  }
+
+  .hd ul {
+    /* border: 1px solid blue; */
+    display: flex;
+    /* li한줄*/
+    justify-content: flex-end;
+    flex-grow: 1;
+    /* 컨테이너에 속성주기,li 오른쪽정렬 */
+    padding-right: 10px;
+    /* 오른쪽에 약간의 여백 */
+  }
+
+  .hd li {
+    /* border: 1px solid blue; */
+    padding: calc(var(--gap1));
+    margin-right: 0;
+    font-size: 1rem;
+    /* Q.글씨도 작아지게 하려면? */
+  }
+
+  .hd li:hover {
+    color: var(--point-c3);
+  }
+
+  .hd li:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .hd button {
+    margin-left: auto;
+    /* 일반적으로 블록 요소의 좌우 마진이용, 가장 오른쪽에 위치 */
+    border-radius: 5px;
+    background-color: var(--point-c3);
+    border: none;
+    height: 30px;
+    width: 150px;
+    color: var(--point-c5);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .btn1 {
+    border-radius: 5px;
+    background-color: var(--point-c3);
+    border: none;
+    color: var(--point-c5);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .hd button:hover {
+    font-weight: bold;
+  }
+
+  /* main영역 */
+
+  .bg span:hover {
+    font-weight: bold;
+  }
+
+  .main img {
+    object-fit: cover;
+    /* 그림 이미지 비율 고정 */
+  }
+
+  /* main2영역 */
+
+  .main2 .container img {
+    grid-column: 2;
+    /* 오른쪽 열에 배치 */
+    grid-row: 1 / span 3;
+    /* 세 개의 행에 걸쳐 배치 */
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+    /* 중앙배치 */
+    padding-top: 20px;
+    z-index: 10;
+  }
+
+  /* intro영역 */
+
+  /*.fra > ul {
+  flex-wrap: nowrap;
+}  */
+
+  .fra > ul > li {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    /* 이미지, p 나란히 정렬 */
+    background-color: var(--point-c4);
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    /* 수직선용 */
+  }
+
+  .fra > ul > li > img {
+    margin-right: 20px;
+    padding: 5px;
+    /* width: 50px;
+  height: 50px; 
+  가상선택자용이었는데 안 붙음*/
+  }
+
+  /* Q. img에는 왜 가상요소가안붙나요? img->li로 변경*/
+  .fra > ul > li::after {
+    content: '';
+    width: 1px;
+    height: 60%;
+    background-color: var(--point-c5);
+    position: absolute;
+    top: 20%;
+    left: 80px;
+    /* li에 붙였기 때문에 고정값으로 */
+    z-index: 10;
+  }
+
+  .ft .info {
+    margin: 55px 0;
+  }
+
+  .ft .info h4 {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+  }
+
+  /* down영역 */
+
+  /* footer영역 */
+
+  .foo > div > img {
+    margin: 40px 0;
+    width: 150px;
+    min-width: 300px;
+    height: 2.5rem;
+  }
+
+  .foo > div > p {
+    width: 150px;
+    min-width: 300px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 1400px) {
+  .fra > ul > li > p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 850px) {
+  .fra > div > h3,
+  .fra > div > img {
+    display: none;
+  }
+
+  .fra > div > a {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 6rem);
+  }
+  .pop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .down > div > img {
+    display: none;
+  }
+  .info {
+    display: none;
+  }
+}
+
+/* 모바일버전 */
+@media (max-width: 670px) {
+  .wrap {
+    background-color: var(--point-c2);
+    backdrop-filter: blur(3px);
+    opacity: 0.8;
+  }
+
+  .hd img {
+    width: 250px;
+    min-width: 100px;
+    /* height: 2rem; */
+    padding-top: 10px;
+    margin-left: 1rem;
+  }
+
+  .hd .ham {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    right: 2rem;
+    top: 0.5rem;
+    /* 클릭 부분을 만들어줘야함, ul에 가려져있었음 */
+    cursor: pointer;
+    padding: 0 0.5rem;
+    border: 1px solid red;
+  }
+
+  .hd ul,
+  .hd button,
+  .main img,
+  .main2 .container img,
+  .main2 span,
+  .fra > div > img,
+  .intro .fra > ul,
+  .process > a,
+  .down > div > img,
+  .foo .non,
+  .info > h4,
+  .info > div > span {
+    display: none;
+  }
+
+  .main2 h3 {
+    color: var(--point-c3);
+    padding-left: 50px;
+  }
+  .main2 p {
+    padding: 1rem;
+    font-size: 10px;
+  }
+  .pop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .pop > li > a > img {
+    width: 30px;
+  }
+
+  .pop > li > a > span {
+    font-size: 8px;
+  }
+  .pop > li {
+    padding-top: 20px;
+    background-color: var(--point-c4);
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .intro .fra {
+    height: 20vh;
+  }
+
+  .fra > div > a {
+    box-shadow: none;
+    background-color: var(--point-c1);
+  }
+  .down .downD {
+    height: 50vh;
+  }
+
+  .downD > div > h3,
+  .downD > div > h4,
+  .downD > div > p {
+    font-size: 10px;
+  }
+
+  .downD > div > ul > li {
+    border: 1px solid var(--point-c5);
+    margin-left: 10px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+  }
+
+  .downD > div > ul > li > img {
+    height: 50px;
+  }
+
+  .ft .foo {
+    height: 10vh;
+  }
+
+  .info {
+    display: block;
+  }
+
+  /* 햄버거 버튼 */
+  .footNav {
+    display: none !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .footNav.on {
+    display: block !important;
+    position: fixed;
+  }
+
+  .footNav.on > li > a {
+    color: var(--point-c3);
+  }
+
+  /* Q. 하단 이미지들 가운데 정렬 한번에 하는 법  */
+}
